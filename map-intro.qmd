@@ -1,0 +1,13 @@
+In this introduction, I want to Give a brief overview about what is possible With spatial science and R and how we can make meaningful maps with readily available data. In previous sections, we already learned about what spatial data is and how it looks. So now we want to Visualize it. 
+
+Therefore, we will use The packages {tmap}, {ggplot2}, {leaflet} and {mapview} to create static and interactive maps. Simultaneously, we want to explore which kind of maps are commonly used In spatial science and how we can create them with the tools available to us. 
+
+```{r}
+#| label: setup
+
+# load/install packages
+pacman::p_load(sf, tidyverse, link)
+
+# setup link package to link to package documentation sites (link.tada.science/index.html)
+
+```
