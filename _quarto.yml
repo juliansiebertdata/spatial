@@ -1,0 +1,21 @@
+project:
+  type: book
+
+book:
+  title: "Spatial Science and Remote Sensing"
+  author: "Julian Siebert"
+  date: "19.3.2024"
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - summary.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+
+editor: visual
+
