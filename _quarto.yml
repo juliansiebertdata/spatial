@@ -6,10 +6,10 @@ book:
   author: "Julian Siebert"
   date: "19.3.2024"
   chapters:
-    - index.qmd
     - intro.qmd
     - summary.qmd
     - references.qmd
+    - map-intro.qmd
 
 bibliography: references.bib
 
