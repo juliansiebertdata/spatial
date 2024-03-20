@@ -1,6 +1,3 @@
-In this introduction, I want to Give a brief overview about what is possible With spatial science and R and how we can make meaningful maps with readily available data. In previous sections, we already learned about what spatial data is and how it looks. So now we want to Visualize it. 
-
-Therefore, we will use The packages {tmap}, {ggplot2}, {leaflet} and {mapview} to create static and interactive maps. Simultaneously, we want to explore which kind of maps are commonly used In spatial science and how we can create them with the tools available to us. 
 
 ```{r}
 #| label: setup
@@ -9,5 +6,34 @@ Therefore, we will use The packages {tmap}, {ggplot2}, {leaflet} and {mapview} t
 pacman::p_load(sf, tidyverse, link)
 
 # setup link package to link to package documentation sites (link.tada.science/index.html)
+link::auto(keep_braces = FALSE)
+
 
 ```
+
+
+In this introduction, I want to Give a brief overview about what is possible With spatial science and R and how we can make meaningful maps with readily available data. In previous sections, we already learned about what spatial data is and how it looks. So now we want to Visualize it. 
+
+Therefore, we will use The packages {tmap}, {ggplot2}, {leaflet} and {mapview} to create static and interactive maps. Simultaneously, we want to explore which kind of maps are commonly used In spatial science and how we can create them with the tools available to us. 
+
+## Ressources and Links
+
+- [THE Book](https://r-spatial.org/book/)
+
+
+### R for GIS and Mapping
+
+{{<video https://youtu.be/TZ8CxNNHiUU?si=9MFdYKUByXe1HQGz >}}
+
+
+## Leaflet
+
+### leafdrop
+
+Maybe (dont know if its still online) https://github.com/r-spatial/leafpop to add tables and graphs to popups in a map.
+
+
+
+### Rayshader
+
+- [Milos Popovic](https://milospopovic.net/blog/) and [Youtube Channel](https://www.youtube.com/@milos-makes-maps)

@@ -1,0 +1,11 @@
+## Routing
+
+
+Routing is an important application of geospatial analysis. There are many different types of routing problems, but the most common is the shortest path problem. This problem is to find the shortest path between two points in a network. The network can be a road network, a public transportation network, or any other network where the edges have a cost (time, distance, etc.).
+
+### Ressources
+
+- [OSRM](http://project-osrm.org/) is a high-performance routing engine for shortest paths in road networks.
+- [Valhalla](https://valhalla.github.io/valhalla/) is an open-source routing engine and accompanying libraries for use with OpenStreetMap data. It is designed to be high-performance and memory-efficient, and can be used for real-time and offline routing on various platforms.
+https://github.com/Robinlovelace/rvalhalla
+

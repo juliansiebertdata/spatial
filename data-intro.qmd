@@ -1,0 +1,22 @@
+
+```{r}
+#| label: setup
+
+# load/install packages
+pacman::p_load(sf, tidyverse, link)
+
+# setup link package to link to package documentation sites (link.tada.science/index.html)
+link::auto(keep_braces = FALSE)
+
+
+```
+
+Before we can start with spatial analysis, we have to get a grasp on how spatial data looks because it's quite different to data we looked before.
+There are two main types of spatial data, vector data and raster data. But the main difference is that they are always referenced in a Geo-reference system. (Yes. there are several). 
+
+## References
+There are several really good ressources in the Internet to learn about spatial data, but I really want to Recommend the Book [Spatial Data Science: with applications in R](https://r-spatial.org/book/) from Edzer Pebesma and Roger Bivand. 
+
+- [Geocomputation with R](https://r.geocompx.org/)
+
+- 

@@ -1,0 +1,22 @@
+Here i want to list all types of spatial data and how to access them in a reasonable way. (API´s) etc.
+
+## API´s
+
+- [Request to an WMS (Web Map Service)](https://www.geodaten.niedersachsen.de/startseite/allgemeine_informationen/downloads/leitfaden_und_checklisten/leitfaeden-der-gdi-ni-127645.html)
+
+
+
+## Databases
+- [INSPIRE Geoportal](https://inspire-geoportal.ec.europa.eu/srv/eng/catalog.search#/hvdshome) der EU mit Daten zu Umwelt, Landwirtschaft, etc.
+- [Agri4Cast](https://agri4cast.jrc.ec.europa.eu/DataPortal/Index.aspx) Ressources Portal der EU enthält Daten zur Landwirtschaft, Wetter, Boden, etc.
+
+
+## Soil Data
+
+- [Soilgrids](https://soilgrids.org/) Soilgrids is a global gridded soil information system operating at a resolution of 250 m. It is based on machine learning and remote sensing and provides soil information for the entire globe. This data is not actually measured and was shown to underestimate extreme soil distributions. It is available as a raster file and can be accessed via an API. The API is documented [here](https://rest.soilgrids.org/query.html).
+    + Percentage of sand, silt, clay
+    + Bulk density
+    + Organic carbon content
+    + pH
+    + Cation exchange capacity
+-[WoSIS](https://www.isric.org/accessing-wosis-using-r) contains harmonized soil data from all over the globe. It is actually measured data. The way to access it with R is described [here](https://git.wur.nl/Batje001/wosis/-/tree/master/R_scripts)

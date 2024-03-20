@@ -1,0 +1,122 @@
+[
+  {
+    "objectID": "map-intro.html",
+    "href": "map-intro.html",
+    "title": "4  load/install packages",
+    "section": "",
+    "text": "4.1 Ressources and Links",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>load/install packages</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "2  Introduction",
+    "section": "",
+    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "3  Summary",
+    "section": "",
+    "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Summary</span>"
+    ]
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
+    "crumbs": [
+      "References"
+    ]
+  },
+  {
+    "objectID": "map-intro.html#leaflet",
+    "href": "map-intro.html#leaflet",
+    "title": "4  load/install packages",
+    "section": "4.2 Leaflet",
+    "text": "4.2 Leaflet\n\n4.2.1 leafdrop\nMaybe (dont know if its still online) https://github.com/r-spatial/leafpop to add tables and graphs to popups in a map.\n\n\n4.2.2 Rayshader\n\nMilos Popovic",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>load/install packages</span>"
+    ]
+  },
+  {
+    "objectID": "map-intro.html#ressoutces-and-links",
+    "href": "map-intro.html#ressoutces-and-links",
+    "title": "4  load/install packages",
+    "section": "",
+    "text": "THE Book\n\n\n4.1.1 R for GIS and Mapping",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>load/install packages</span>"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Spatial Science and Remote Sensing",
+    "section": "",
+    "text": "0.1 Books",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Books</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#books",
+    "href": "index.html#books",
+    "title": "Spatial Science and Remote Sensing",
+    "section": "",
+    "text": "An Introduction to Spatial Data Analysis\nAdvanced Remote Sensing Analysis\nSpatial Data Science",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Books</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#people",
+    "href": "index.html#people",
+    "title": "Spatial Science and Remote Sensing",
+    "section": "0.2 People",
+    "text": "0.2 People\n\nRafael H. M. Pereira: Transport and Accessibilita Analysis\nRobin Lovelace: Transport and Geocomputation Analysis\nMike Mahoney: SPatial Data Science in Ecology, API for Satellite Imagery\nBenjamin Nowak: Agronomist !! (France and Plotting)\nMilos Popovic: Workflows and Crazy Maps and his Blog",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Books</span>"
+    ]
+  },
+  {
+    "objectID": "map-intro.html#ressources-and-links",
+    "href": "map-intro.html#ressources-and-links",
+    "title": "4  load/install packages",
+    "section": "",
+    "text": "THE Book\n\n\n4.1.1 R for GIS and Mapping",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>load/install packages</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#get-data",
+    "href": "index.html#get-data",
+    "title": "Spatial Science and Remote Sensing",
+    "section": "0.3 Get Data",
+    "text": "0.3 Get Data\n\nrsi-package to download satellite images also here https://geocompx.org/post/2024/rsi-bp1/",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Books</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#courses",
+    "href": "index.html#courses",
+    "title": "Spatial Science and Remote Sensing",
+    "section": "0.4 Courses",
+    "text": "0.4 Courses\n\nSpatial Data Science Courses",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Books</span>"
+    ]
+  }
+]

@@ -1,0 +1,11 @@
+Here we want to show basic worflows in spatial science.
+
+I will start using this video.
+
+- [Using R for Gis and Mapping](https://youtu.be/TZ8CxNNHiUU?si=Xesx-HnRDz2-iHVI)
+
+
+
+### Soil Organic Carbon Mapping
+
+- [Soil Organic Carbon Mapping](https://fao-gsp.github.io/SOC-Mapping-Cookbook/index.htmlQ9Q)

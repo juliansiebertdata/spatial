@@ -1,0 +1,28 @@
+
+
+
+
+## Books
+
+- [An Introduction to Spatial Data Analysis](http://book.ecosens.org/gsbook/)
+- [Advanced Remote Sensing Analysis](http://book.ecosens.org/advanced-remote-sensing-book/)
+- [Spatial Data Science](https://r-spatial.org/book/)
+- 
+
+
+## People 
+
+- [Rafael H. M. Pereira](https://github.com/rafapereirabr): Transport and Accessibilita Analysis
+- [Robin Lovelace](https://github.com/Robinlovelace): Transport and Geocomputation Analysis
+- [Mike Mahoney](https://www.mm218.dev/): SPatial Data Science in Ecology, API for Satellite Imagery 
+- [Benjamin Nowak](https://github.com/BjnNowak): Agronomist !! (France and Plotting)
+- [Milos Popovic](https://github.com/milos-agathon): Workflows and Crazy Maps and his [Blog](https://milospopovic.net/blog)
+
+
+## Get Data
+
+- [rsi-package](https://www.mm218.dev/posts/2024-01-10-rsi-cran/) to download satellite images also here https://geocompx.org/post/2024/rsi-bp1/
+
+## Courses
+
+- [Spatial Data Science Courses](https://geocompx.org/guestbook)

@@ -1,0 +1,18 @@
+
+```{r}
+#| label: setup
+
+# load/install packages
+pacman::p_load(sf, tidyverse, link)
+
+# setup link package to link to package documentation sites (link.tada.science/index.html)
+link::auto(keep_braces = FALSE)
+
+
+```
+
+We discussed raster data in the previous chapter. Now we want to look how basic workflows look with raster data. 
+
+Wee will mainly use the {terra} package for this.
+- [Geocomputation in R](https://r.geocompx.org/)
+- [R as Gis Economist](https://tmieno2.github.io/R-as-GIS-for-Economists/raster-basics.html#read-raster-files)
