@@ -152,7 +152,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">intro.html</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -183,14 +183,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#ressources-and-links" id="toc-ressources-and-links" class="nav-link active" data-scroll-target="#ressources-and-links"><span class="header-section-number">4.1</span> Ressources and Links</a>
+  <li><a href="#ressources-and-links" id="toc-ressources-and-links" class="nav-link active" data-scroll-target="#ressources-and-links"><span class="header-section-number">4.1</span> Ressources and Links</a></li>
+  <li><a href="#kind-of-maps" id="toc-kind-of-maps" class="nav-link" data-scroll-target="#kind-of-maps"><span class="header-section-number">4.2</span> Kind of Maps</a>
   <ul class="collapse">
-  <li><a href="#r-for-gis-and-mapping" id="toc-r-for-gis-and-mapping" class="nav-link" data-scroll-target="#r-for-gis-and-mapping"><span class="header-section-number">4.1.1</span> R for GIS and Mapping</a></li>
+  <li><a href="#hexagon-hexbin-maps" id="toc-hexagon-hexbin-maps" class="nav-link" data-scroll-target="#hexagon-hexbin-maps"><span class="header-section-number">4.2.1</span> Hexagon / Hexbin Maps</a></li>
+  <li><a href="#r-for-gis-and-mapping" id="toc-r-for-gis-and-mapping" class="nav-link" data-scroll-target="#r-for-gis-and-mapping"><span class="header-section-number">4.2.2</span> R for GIS and Mapping</a></li>
   </ul></li>
-  <li><a href="#leaflet" id="toc-leaflet" class="nav-link" data-scroll-target="#leaflet"><span class="header-section-number">4.2</span> Leaflet</a>
+  <li><a href="#leaflet" id="toc-leaflet" class="nav-link" data-scroll-target="#leaflet"><span class="header-section-number">4.3</span> Leaflet</a>
   <ul class="collapse">
-  <li><a href="#leafdrop" id="toc-leafdrop" class="nav-link" data-scroll-target="#leafdrop"><span class="header-section-number">4.2.1</span> leafdrop</a></li>
-  <li><a href="#rayshader" id="toc-rayshader" class="nav-link" data-scroll-target="#rayshader"><span class="header-section-number">4.2.2</span> Rayshader</a></li>
+  <li><a href="#leafdrop" id="toc-leafdrop" class="nav-link" data-scroll-target="#leafdrop"><span class="header-section-number">4.3.1</span> leafdrop</a></li>
+  </ul></li>
+  <li><a href="#rayshader" id="toc-rayshader" class="nav-link" data-scroll-target="#rayshader"><span class="header-section-number">4.4</span> Rayshader</a></li>
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples"><span class="header-section-number">4.5</span> Examples</a>
+  <ul class="collapse">
+  <li><a href="#visualize-soil-distribution" id="toc-visualize-soil-distribution" class="nav-link" data-scroll-target="#visualize-soil-distribution"><span class="header-section-number">4.5.1</span> Visualize Soil distribution</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -235,23 +241,63 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 data-number="4.1" class="anchored" data-anchor-id="ressources-and-links"><span class="header-section-number">4.1</span> Ressources and Links</h2>
 <ul>
 <li><a href="https://r-spatial.org/book/">THE Book</a></li>
+<li><a href="https://bjnnowak.github.io/Lessons/2nd_session_R#1">Presentations</a></li>
 </ul>
-<section id="r-for-gis-and-mapping" class="level3" data-number="4.1.1">
-<h3 data-number="4.1.1" class="anchored" data-anchor-id="r-for-gis-and-mapping"><span class="header-section-number">4.1.1</span> R for GIS and Mapping</h3>
+</section>
+<section id="kind-of-maps" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="kind-of-maps"><span class="header-section-number">4.2</span> Kind of Maps</h2>
+<p>There are several different Maptypes we can choose to visualize our data. The most common ones are: - <a href="https://r-graph-gallery.com/choropleth-map.html">Choropleth Maps</a> - <a href="https://r-graph-gallery.com/hexbin-map.html">Hexbin Maps</a> - <a href="https://r-graph-gallery.com/cartogram.html">Cartograms</a> - <a href="https://r-graph-gallery.com/connection-map.html">Flow Maps</a> - <a href="https://r-graph-gallery.com/bubble-map.html">Bubble Maps</a></p>
+<p>Following we will explore how to create these maps with R.</p>
+<p><a href="https://bjnnowak.github.io/memo_agro/">Great Library by Benjamin Nowak with code</a> and <a href="https://bjnnowak.github.io/gis/map_gallery.html">here without code</a></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/map-overview.jpg" class="img-fluid figure-img"></p>
+<figcaption>Different Kind of Maps</figcaption>
+</figure>
+</div>
+<p>Overviw Image code <a href="https://github.com/BjnNowak/TidyTuesday/blob/main/SC_HumanPop.R">here</a></p>
+<section id="hexagon-hexbin-maps" class="level3" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored" data-anchor-id="hexagon-hexbin-maps"><span class="header-section-number">4.2.1</span> Hexagon / Hexbin Maps</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/bivariate-hexnins.jpg" class="img-fluid figure-img"></p>
+<figcaption>Bivariate Hexagons</figcaption>
+</figure>
+</div>
+<p>With the code <a href="https://github.com/BjnNowak/TidyTuesday/blob/main/SC_AnimalFarms_Bivariate.R">here</a></p>
+<ul>
+<li><a href="https://github.com/BjnNowak/frex">frex package</a> and video below!</li>
+</ul>
+</section>
+<section id="r-for-gis-and-mapping" class="level3" data-number="4.2.2">
+<h3 data-number="4.2.2" class="anchored" data-anchor-id="r-for-gis-and-mapping"><span class="header-section-number">4.2.2</span> R for GIS and Mapping</h3>
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/TZ8CxNNHiUU?si=9MFdYKUByXe1HQGz" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 </section>
 </section>
-<section id="leaflet" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="leaflet"><span class="header-section-number">4.2</span> Leaflet</h2>
-<section id="leafdrop" class="level3" data-number="4.2.1">
-<h3 data-number="4.2.1" class="anchored" data-anchor-id="leafdrop"><span class="header-section-number">4.2.1</span> leafdrop</h3>
+<section id="leaflet" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="leaflet"><span class="header-section-number">4.3</span> Leaflet</h2>
+<section id="leafdrop" class="level3" data-number="4.3.1">
+<h3 data-number="4.3.1" class="anchored" data-anchor-id="leafdrop"><span class="header-section-number">4.3.1</span> leafdrop</h3>
 <p>Maybe (dont know if its still online) https://github.com/r-spatial/leafpop to add tables and graphs to popups in a map.</p>
 </section>
-<section id="rayshader" class="level3" data-number="4.2.2">
-<h3 data-number="4.2.2" class="anchored" data-anchor-id="rayshader"><span class="header-section-number">4.2.2</span> Rayshader</h3>
+</section>
+<section id="rayshader" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="rayshader"><span class="header-section-number">4.4</span> Rayshader</h2>
 <ul>
-<li><a href="https://milospopovic.net/blog/">Milos Popovic</a></li>
+<li><a href="https://milospopovic.net/blog/">Milos Popovic</a> and <a href="https://www.youtube.com/@milos-makes-maps">Youtube Channel</a></li>
 </ul>
+</section>
+<section id="examples" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="examples"><span class="header-section-number">4.5</span> Examples</h2>
+<section id="visualize-soil-distribution" class="level3" data-number="4.5.1">
+<h3 data-number="4.5.1" class="anchored" data-anchor-id="visualize-soil-distribution"><span class="header-section-number">4.5.1</span> Visualize Soil distribution</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/soil-map.jpg" class="img-fluid figure-img"></p>
+<figcaption>Soil Map from Benjamin Nowak</figcaption>
+</figure>
+</div>
+<p>https://github.com/BjnNowak/TidyTuesday/blob/main/SC_texture.R</p>
 
 
 </section>

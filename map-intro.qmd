@@ -19,7 +19,43 @@ Therefore, we will use The packages {tmap}, {ggplot2}, {leaflet} and {mapview} t
 ## Ressources and Links
 
 - [THE Book](https://r-spatial.org/book/)
+- [Presentations](https://bjnnowak.github.io/Lessons/2nd_session_R#1)
 
+
+
+## Kind of Maps
+
+There are several different Maptypes we can choose to visualize our data. The most common ones are:
+ - [Choropleth Maps](https://r-graph-gallery.com/choropleth-map.html)
+ - [Hexbin Maps](https://r-graph-gallery.com/hexbin-map.html)
+ - [Cartograms](https://r-graph-gallery.com/cartogram.html)
+ - [Flow Maps](https://r-graph-gallery.com/connection-map.html)
+ - [Bubble Maps](https://r-graph-gallery.com/bubble-map.html)
+
+Following we will explore how to create these maps with R.
+
+[Great Library by Benjamin Nowak with code](https://bjnnowak.github.io/memo_agro/) and [here without code](https://bjnnowak.github.io/gis/map_gallery.html)
+
+![Different Kind of Maps](images/map-overview.jpg)
+
+Overviw Image code [here](https://github.com/BjnNowak/TidyTuesday/blob/main/SC_HumanPop.R)
+
+### Hexagon / Hexbin Maps
+
+![Bivariate Hexagons](images/bivariate-hexnins.jpg)
+
+With the code [here](https://github.com/BjnNowak/TidyTuesday/blob/main/SC_AnimalFarms_Bivariate.R)
+
+- [frex package](https://github.com/BjnNowak/frex) and video below!
+- Uber Hexbin Package (see video below)
+
+### Bubble Maps
+
+![Bubble Map](images/bubble-map.jpg)
+
+With the code [here](https://github.com/BjnNowak/TidyTuesday/blob/main/SC_GreenCountry_Europe.R) 
+
+- [bertin](https://github.com/BjnNowak/bertin) package to make valued bubble maps from raster files.
 
 ### R for GIS and Mapping
 
@@ -34,6 +70,7 @@ Maybe (dont know if its still online) https://github.com/r-spatial/leafpop to ad
 
 
 
-### Rayshader
+## Rayshader
 
 - [Milos Popovic](https://milospopovic.net/blog/) and [Youtube Channel](https://www.youtube.com/@milos-makes-maps)
+

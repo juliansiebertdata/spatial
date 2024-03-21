@@ -19,4 +19,20 @@ There are several really good ressources in the Internet to learn about spatial 
 
 - [Geocomputation with R](https://r.geocompx.org/)
 
-- 
+
+
+
+## Work with spatial data
+
+Quaote : There is only one way. The tidy-way.
+
+We will wirk with spatial data the tidy way. 
+
+- Workshop/Introduction [here](https://github.com/Robinlovelace/opengeohub2023)
+- [Geocomputation with R](https://r.geocompx.org/)
+
+
+
+
+
+Another [Workshop](https://espm-288.carlboettiger.info/syllabus/) here.

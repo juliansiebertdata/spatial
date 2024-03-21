@@ -9,3 +9,29 @@ I will start using this video.
 ### Soil Organic Carbon Mapping
 
 - [Soil Organic Carbon Mapping](https://fao-gsp.github.io/SOC-Mapping-Cookbook/index.htmlQ9Q)
+
+### Visualize Soil distribution
+
+![Soil Map from Benjamin Nowak](images/soil-map.jpg)
+
+With the [github-repository](https://github.com/BjnNowak/TidyTuesday/blob/main/SC_texture.R) of Benjamin Nowak, we can visualize the soil distribution in France.
+
+
+### Visualize Drought
+
+Benjamin Novaks GitHub page has a [repository](https://github.com/BjnNowak/drought/tree/main) for visualizing drought. Data came from [Global Drought Observatory](https://edo.jrc.ec.europa.eu/gdo/php/index.php?id=2112).
+
+![Drought Plot](images/drought.png)
+
+
+### Agricultural DOmestic Product
+
+Data from [The World Bank](https://datacatalog.worldbank.org/search/dataset/0061507) and visualized by 
+
+### Great Tables with Maps
+
+[Our cultivated Planet](https://github.com/BjnNowak/CultivatedPlanet) by Benjamin Nowak. and Data from the [FAO Stat Website](https://www.fao.org/faostat/en/#home) and the expalantion of the project [here](https://forum.posit.co/t/one-farm-creating-our-cultivated-planet-the-big-barnyard-tables/117744)
+
+### Research on Cover Crop Adoption
+
+- [Paper](https://link.springer.com/article/10.1007/s13593-022-00770-y)

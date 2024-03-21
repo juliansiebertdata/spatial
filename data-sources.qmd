@@ -3,6 +3,7 @@ Here i want to list all types of spatial data and how to access them in a reason
 ## API´s
 
 - [Request to an WMS (Web Map Service)](https://www.geodaten.niedersachsen.de/startseite/allgemeine_informationen/downloads/leitfaden_und_checklisten/leitfaeden-der-gdi-ni-127645.html)
+- [Earth Engine Data Catalog](https://developers.google.com/earth-engine/datasets)
 
 
 
@@ -10,6 +11,28 @@ Here i want to list all types of spatial data and how to access them in a reason
 - [INSPIRE Geoportal](https://inspire-geoportal.ec.europa.eu/srv/eng/catalog.search#/hvdshome) der EU mit Daten zu Umwelt, Landwirtschaft, etc.
 - [Agri4Cast](https://agri4cast.jrc.ec.europa.eu/DataPortal/Index.aspx) Ressources Portal der EU enthält Daten zur Landwirtschaft, Wetter, Boden, etc.
 
+## Satellite Data
+
+- [rsi-package](https://www.mm218.dev/posts/2024-01-10-rsi-cran/) to download satellite images also here https://geocompx.org/post/2024/rsi-bp1/
+
+## Weather Data
+
+- [WorldClim](https://www.worldclim.org/data/worldclim21.html) WorldClim is a set of global climate layers (climate grids) with a spatial resolution of about 1 km². It is based on weather station data and provides information on temperature and precipitation. The data is available as raster files and can be accessed via an API. The API is documented [here](https://worldclim.org/data/worldclim21.html).
+    + Mean, minimum, and maximum temperature
+    + Precipitation
+    + Solar radiation
+    + Wind speed
+- [ERA5](https://www.ecmwf.int/en/forecasts/datasets/reanalysis-datasets/era5) ERA5 is a reanalysis dataset that provides global weather data at a resolution of 0.25°. It is based on a combination of weather station data, satellite data, and weather models. The data is available as raster files and can be accessed via an API. The API is documented [here](https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-single-levels?tab=form).
+    + Temperature
+    + Precipitation
+    + Wind speed
+    + Solar radiation
+    + Humidity
+- [CHIRPS](https://www.chc.ucsb.edu/data/chirps) CHIRPS is a global rainfall dataset that provides information on precipitation at a resolution of 0.05°. It is based on a combination of weather station data and satellite data. The data is available as raster files and can be accessed via an API. The API is documented [here](https://www.chc.ucsb.edu/data/chirps).
+
+### Precipitation Data
+
+- [pRecipe](https://cran.r-project.org/web/packages/pRecipe/vignettes/introduction.html) Package in R makes a lot of common precipitation data accessible. There is a video on how to do this [here](https://www.youtube.com/watch?v=9Ex-f66qe2w)
 
 ## Soil Data
 
@@ -20,3 +43,14 @@ Here i want to list all types of spatial data and how to access them in a reason
     + pH
     + Cation exchange capacity
 -[WoSIS](https://www.isric.org/accessing-wosis-using-r) contains harmonized soil data from all over the globe. It is actually measured data. The way to access it with R is described [here](https://git.wur.nl/Batje001/wosis/-/tree/master/R_scripts)
+
+
+## Drought Data
+
+- [GDO / CDI](https://edo.jrc.ec.europa.eu/gdo/php/index.php?id=2112) Global Drought Observatory with the Combined Drought Inidicator (CDI) provides information about changes in drought indicators for europe and worldwide.
+
+
+## Land Use Data
+
+- [Copernicus Global Land Service](https://land.copernicus.eu/global/) The Copernicus Global Land Service provides information on land cover and land use at a global scale. It is based on satellite data and provides information on land cover, land use, and changes in land cover over time. The data is available as raster files and can be accessed via an API.
+- [EuroCrops Dataset](https://zenodo.org/records/10118572) from Zenodo is a open source dataset which tries to provide information about the crop type of each individual field in a unified an machine-readable syntax.

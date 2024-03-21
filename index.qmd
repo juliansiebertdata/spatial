@@ -1,6 +1,8 @@
 
 
+## Workshops / Conference
 
+- [OpenGeoHub Summer School 2023](https://av.tib.eu/media/63088)
 
 ## Books
 
@@ -16,6 +18,7 @@
 - [Robin Lovelace](https://github.com/Robinlovelace): Transport and Geocomputation Analysis
 - [Mike Mahoney](https://www.mm218.dev/): SPatial Data Science in Ecology, API for Satellite Imagery 
 - [Benjamin Nowak](https://github.com/BjnNowak): Agronomist !! (France and Plotting)
+- [Jakub Nowosad](https://github.com/Nowosad): Geocomputation and Spatial Data Science, Landscape Modelling
 - [Milos Popovic](https://github.com/milos-agathon): Workflows and Crazy Maps and his [Blog](https://milospopovic.net/blog)
 
 

@@ -1,65 +1,5 @@
 [
   {
-    "objectID": "map-intro.html",
-    "href": "map-intro.html",
-    "title": "4  load/install packages",
-    "section": "",
-    "text": "4.1 Ressources and Links",
-    "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>load/install packages</span>"
-    ]
-  },
-  {
-    "objectID": "intro.html",
-    "href": "intro.html",
-    "title": "2  Introduction",
-    "section": "",
-    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
-    "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction</span>"
-    ]
-  },
-  {
-    "objectID": "summary.html",
-    "href": "summary.html",
-    "title": "3  Summary",
-    "section": "",
-    "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2",
-    "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Summary</span>"
-    ]
-  },
-  {
-    "objectID": "references.html",
-    "href": "references.html",
-    "title": "References",
-    "section": "",
-    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
-    "crumbs": [
-      "References"
-    ]
-  },
-  {
-    "objectID": "map-intro.html#leaflet",
-    "href": "map-intro.html#leaflet",
-    "title": "4  load/install packages",
-    "section": "4.2 Leaflet",
-    "text": "4.2 Leaflet\n\n4.2.1 leafdrop\nMaybe (dont know if its still online) https://github.com/r-spatial/leafpop to add tables and graphs to popups in a map.\n\n\n4.2.2 Rayshader\n\nMilos Popovic",
-    "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>load/install packages</span>"
-    ]
-  },
-  {
-    "objectID": "map-intro.html#ressoutces-and-links",
-    "href": "map-intro.html#ressoutces-and-links",
-    "title": "4  load/install packages",
-    "section": "",
-    "text": "THE Book\n\n\n4.1.1 R for GIS and Mapping",
-    "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>load/install packages</span>"
-    ]
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Spatial Science and Remote Sensing",
@@ -90,16 +30,6 @@
     ]
   },
   {
-    "objectID": "map-intro.html#ressources-and-links",
-    "href": "map-intro.html#ressources-and-links",
-    "title": "4  load/install packages",
-    "section": "",
-    "text": "THE Book\n\n\n4.1.1 R for GIS and Mapping",
-    "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>load/install packages</span>"
-    ]
-  },
-  {
     "objectID": "index.html#get-data",
     "href": "index.html#get-data",
     "title": "Spatial Science and Remote Sensing",
@@ -117,6 +47,76 @@
     "text": "0.4 Courses\n\nSpatial Data Science Courses",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Books</span>"
+    ]
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "3  Summary",
+    "section": "",
+    "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Summary</span>"
+    ]
+  },
+  {
+    "objectID": "map-intro.html",
+    "href": "map-intro.html",
+    "title": "4  load/install packages",
+    "section": "",
+    "text": "4.1 Ressources and Links",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>load/install packages</span>"
+    ]
+  },
+  {
+    "objectID": "map-intro.html#ressources-and-links",
+    "href": "map-intro.html#ressources-and-links",
+    "title": "4  load/install packages",
+    "section": "",
+    "text": "THE Book\nPresentations",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>load/install packages</span>"
+    ]
+  },
+  {
+    "objectID": "map-intro.html#kind-of-maps",
+    "href": "map-intro.html#kind-of-maps",
+    "title": "4  load/install packages",
+    "section": "4.2 Kind of Maps",
+    "text": "4.2 Kind of Maps\nThere are several different Maptypes we can choose to visualize our data. The most common ones are: - Choropleth Maps - Hexbin Maps - Cartograms - Flow Maps - Bubble Maps\nFollowing we will explore how to create these maps with R.\nGreat Library by Benjamin Nowak with code and here without code\n\n\n\nDifferent Kind of Maps\n\n\nOverviw Image code here\n\n4.2.1 Hexagon / Hexbin Maps\n\n\n\nBivariate Hexagons\n\n\nWith the code here\n\nfrex package and video below!\n\n\n\n4.2.2 R for GIS and Mapping",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>load/install packages</span>"
+    ]
+  },
+  {
+    "objectID": "map-intro.html#leaflet",
+    "href": "map-intro.html#leaflet",
+    "title": "4  load/install packages",
+    "section": "4.3 Leaflet",
+    "text": "4.3 Leaflet\n\n4.3.1 leafdrop\nMaybe (dont know if its still online) https://github.com/r-spatial/leafpop to add tables and graphs to popups in a map.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>load/install packages</span>"
+    ]
+  },
+  {
+    "objectID": "map-intro.html#rayshader",
+    "href": "map-intro.html#rayshader",
+    "title": "4  load/install packages",
+    "section": "4.4 Rayshader",
+    "text": "4.4 Rayshader\n\nMilos Popovic and Youtube Channel",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>load/install packages</span>"
+    ]
+  },
+  {
+    "objectID": "map-intro.html#examples",
+    "href": "map-intro.html#examples",
+    "title": "4  load/install packages",
+    "section": "4.5 Examples",
+    "text": "4.5 Examples\n\n4.5.1 Visualize Soil distribution\n\n\n\nSoil Map from Benjamin Nowak\n\n\nhttps://github.com/BjnNowak/TidyTuesday/blob/main/SC_texture.R",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>load/install packages</span>"
     ]
   }
 ]
