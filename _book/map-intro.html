@@ -146,7 +146,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Books</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Workshops / Conference</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -187,17 +187,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#kind-of-maps" id="toc-kind-of-maps" class="nav-link" data-scroll-target="#kind-of-maps"><span class="header-section-number">4.2</span> Kind of Maps</a>
   <ul class="collapse">
   <li><a href="#hexagon-hexbin-maps" id="toc-hexagon-hexbin-maps" class="nav-link" data-scroll-target="#hexagon-hexbin-maps"><span class="header-section-number">4.2.1</span> Hexagon / Hexbin Maps</a></li>
-  <li><a href="#r-for-gis-and-mapping" id="toc-r-for-gis-and-mapping" class="nav-link" data-scroll-target="#r-for-gis-and-mapping"><span class="header-section-number">4.2.2</span> R for GIS and Mapping</a></li>
+  <li><a href="#bubble-maps" id="toc-bubble-maps" class="nav-link" data-scroll-target="#bubble-maps"><span class="header-section-number">4.2.2</span> Bubble Maps</a></li>
+  <li><a href="#r-for-gis-and-mapping" id="toc-r-for-gis-and-mapping" class="nav-link" data-scroll-target="#r-for-gis-and-mapping"><span class="header-section-number">4.2.3</span> R for GIS and Mapping</a></li>
   </ul></li>
   <li><a href="#leaflet" id="toc-leaflet" class="nav-link" data-scroll-target="#leaflet"><span class="header-section-number">4.3</span> Leaflet</a>
   <ul class="collapse">
   <li><a href="#leafdrop" id="toc-leafdrop" class="nav-link" data-scroll-target="#leafdrop"><span class="header-section-number">4.3.1</span> leafdrop</a></li>
   </ul></li>
   <li><a href="#rayshader" id="toc-rayshader" class="nav-link" data-scroll-target="#rayshader"><span class="header-section-number">4.4</span> Rayshader</a></li>
-  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples"><span class="header-section-number">4.5</span> Examples</a>
-  <ul class="collapse">
-  <li><a href="#visualize-soil-distribution" id="toc-visualize-soil-distribution" class="nav-link" data-scroll-target="#visualize-soil-distribution"><span class="header-section-number">4.5.1</span> Visualize Soil distribution</a></li>
-  </ul></li>
   </ul>
 </nav>
     </div>
@@ -267,10 +264,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>With the code <a href="https://github.com/BjnNowak/TidyTuesday/blob/main/SC_AnimalFarms_Bivariate.R">here</a></p>
 <ul>
 <li><a href="https://github.com/BjnNowak/frex">frex package</a> and video below!</li>
+<li>Uber Hexbin Package (see video below)</li>
 </ul>
 </section>
-<section id="r-for-gis-and-mapping" class="level3" data-number="4.2.2">
-<h3 data-number="4.2.2" class="anchored" data-anchor-id="r-for-gis-and-mapping"><span class="header-section-number">4.2.2</span> R for GIS and Mapping</h3>
+<section id="bubble-maps" class="level3" data-number="4.2.2">
+<h3 data-number="4.2.2" class="anchored" data-anchor-id="bubble-maps"><span class="header-section-number">4.2.2</span> Bubble Maps</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/bubble-map.jpg" class="img-fluid figure-img"></p>
+<figcaption>Bubble Map</figcaption>
+</figure>
+</div>
+<p>With the code <a href="https://github.com/BjnNowak/TidyTuesday/blob/main/SC_GreenCountry_Europe.R">here</a></p>
+<ul>
+<li><a href="https://github.com/BjnNowak/bertin">bertin</a> package to make valued bubble maps from raster files.</li>
+</ul>
+</section>
+<section id="r-for-gis-and-mapping" class="level3" data-number="4.2.3">
+<h3 data-number="4.2.3" class="anchored" data-anchor-id="r-for-gis-and-mapping"><span class="header-section-number">4.2.3</span> R for GIS and Mapping</h3>
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/TZ8CxNNHiUU?si=9MFdYKUByXe1HQGz" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 </section>
 </section>
@@ -286,21 +297,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li><a href="https://milospopovic.net/blog/">Milos Popovic</a> and <a href="https://www.youtube.com/@milos-makes-maps">Youtube Channel</a></li>
 </ul>
-</section>
-<section id="examples" class="level2" data-number="4.5">
-<h2 data-number="4.5" class="anchored" data-anchor-id="examples"><span class="header-section-number">4.5</span> Examples</h2>
-<section id="visualize-soil-distribution" class="level3" data-number="4.5.1">
-<h3 data-number="4.5.1" class="anchored" data-anchor-id="visualize-soil-distribution"><span class="header-section-number">4.5.1</span> Visualize Soil distribution</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/soil-map.jpg" class="img-fluid figure-img"></p>
-<figcaption>Soil Map from Benjamin Nowak</figcaption>
-</figure>
-</div>
-<p>https://github.com/BjnNowak/TidyTuesday/blob/main/SC_texture.R</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

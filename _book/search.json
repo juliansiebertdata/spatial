@@ -4,49 +4,59 @@
     "href": "index.html",
     "title": "Spatial Science and Remote Sensing",
     "section": "",
-    "text": "0.1 Books",
+    "text": "0.1 Workshops / Conference",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Books</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Workshops / Conference</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#workshops-conference",
+    "href": "index.html#workshops-conference",
+    "title": "Spatial Science and Remote Sensing",
+    "section": "",
+    "text": "OpenGeoHub Summer School 2023",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Workshops / Conference</span>"
     ]
   },
   {
     "objectID": "index.html#books",
     "href": "index.html#books",
     "title": "Spatial Science and Remote Sensing",
-    "section": "",
-    "text": "An Introduction to Spatial Data Analysis\nAdvanced Remote Sensing Analysis\nSpatial Data Science",
+    "section": "0.2 Books",
+    "text": "0.2 Books\n\nAn Introduction to Spatial Data Analysis\nAdvanced Remote Sensing Analysis\nSpatial Data Science",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Books</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Workshops / Conference</span>"
     ]
   },
   {
     "objectID": "index.html#people",
     "href": "index.html#people",
     "title": "Spatial Science and Remote Sensing",
-    "section": "0.2 People",
-    "text": "0.2 People\n\nRafael H. M. Pereira: Transport and Accessibilita Analysis\nRobin Lovelace: Transport and Geocomputation Analysis\nMike Mahoney: SPatial Data Science in Ecology, API for Satellite Imagery\nBenjamin Nowak: Agronomist !! (France and Plotting)\nMilos Popovic: Workflows and Crazy Maps and his Blog",
+    "section": "0.3 People",
+    "text": "0.3 People\n\nRafael H. M. Pereira: Transport and Accessibilita Analysis\nRobin Lovelace: Transport and Geocomputation Analysis\nMike Mahoney: SPatial Data Science in Ecology, API for Satellite Imagery\nBenjamin Nowak: Agronomist !! (France and Plotting)\nJakub Nowosad: Geocomputation and Spatial Data Science, Landscape Modelling\nMilos Popovic: Workflows and Crazy Maps and his Blog",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Books</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Workshops / Conference</span>"
     ]
   },
   {
     "objectID": "index.html#get-data",
     "href": "index.html#get-data",
     "title": "Spatial Science and Remote Sensing",
-    "section": "0.3 Get Data",
-    "text": "0.3 Get Data\n\nrsi-package to download satellite images also here https://geocompx.org/post/2024/rsi-bp1/",
+    "section": "0.4 Get Data",
+    "text": "0.4 Get Data\n\nrsi-package to download satellite images also here https://geocompx.org/post/2024/rsi-bp1/",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Books</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Workshops / Conference</span>"
     ]
   },
   {
     "objectID": "index.html#courses",
     "href": "index.html#courses",
     "title": "Spatial Science and Remote Sensing",
-    "section": "0.4 Courses",
-    "text": "0.4 Courses\n\nSpatial Data Science Courses",
+    "section": "0.5 Courses",
+    "text": "0.5 Courses\n\nSpatial Data Science Courses",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Books</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Workshops / Conference</span>"
     ]
   },
   {
@@ -84,7 +94,7 @@
     "href": "map-intro.html#kind-of-maps",
     "title": "4  load/install packages",
     "section": "4.2 Kind of Maps",
-    "text": "4.2 Kind of Maps\nThere are several different Maptypes we can choose to visualize our data. The most common ones are: - Choropleth Maps - Hexbin Maps - Cartograms - Flow Maps - Bubble Maps\nFollowing we will explore how to create these maps with R.\nGreat Library by Benjamin Nowak with code and here without code\n\n\n\nDifferent Kind of Maps\n\n\nOverviw Image code here\n\n4.2.1 Hexagon / Hexbin Maps\n\n\n\nBivariate Hexagons\n\n\nWith the code here\n\nfrex package and video below!\n\n\n\n4.2.2 R for GIS and Mapping",
+    "text": "4.2 Kind of Maps\nThere are several different Maptypes we can choose to visualize our data. The most common ones are: - Choropleth Maps - Hexbin Maps - Cartograms - Flow Maps - Bubble Maps\nFollowing we will explore how to create these maps with R.\nGreat Library by Benjamin Nowak with code and here without code\n\n\n\nDifferent Kind of Maps\n\n\nOverviw Image code here\n\n4.2.1 Hexagon / Hexbin Maps\n\n\n\nBivariate Hexagons\n\n\nWith the code here\n\nfrex package and video below!\nUber Hexbin Package (see video below)\n\n\n\n4.2.2 Bubble Maps\n\n\n\nBubble Map\n\n\nWith the code here\n\nbertin package to make valued bubble maps from raster files.\n\n\n\n4.2.3 R for GIS and Mapping",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>load/install packages</span>"
     ]
@@ -105,16 +115,6 @@
     "title": "4  load/install packages",
     "section": "4.4 Rayshader",
     "text": "4.4 Rayshader\n\nMilos Popovic and Youtube Channel",
-    "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>load/install packages</span>"
-    ]
-  },
-  {
-    "objectID": "map-intro.html#examples",
-    "href": "map-intro.html#examples",
-    "title": "4  load/install packages",
-    "section": "4.5 Examples",
-    "text": "4.5 Examples\n\n4.5.1 Visualize Soil distribution\n\n\n\nSoil Map from Benjamin Nowak\n\n\nhttps://github.com/BjnNowak/TidyTuesday/blob/main/SC_texture.R",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>load/install packages</span>"
     ]
