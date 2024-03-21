@@ -18,7 +18,8 @@ Therefore, we will use The packages {tmap}, {ggplot2}, {leaflet} and {mapview} t
 
 ## Ressources and Links
 
-- [THE Book](https://r-spatial.org/book/)
+- [Making Maps with R](https://bookdown.org/nicohahn/making_maps_with_r5/docs/introduction.html)
+- [Geospatial Data Science](https://r-spatial.org/book/)
 - [Presentations](https://bjnnowak.github.io/Lessons/2nd_session_R#1)
 
 
@@ -74,3 +75,7 @@ Maybe (dont know if its still online) https://github.com/r-spatial/leafpop to ad
 
 - [Milos Popovic](https://milospopovic.net/blog/) and [Youtube Channel](https://www.youtube.com/@milos-makes-maps)
 
+
+## Vector Tiles Map
+
+ - [Vextor Tiles Blogpost](https://www.milesmcbain.com/posts/vector-tiles/)

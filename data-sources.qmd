@@ -1,5 +1,10 @@
 Here i want to list all types of spatial data and how to access them in a reasonable way. (API´s) etc.
 
+## Collections
+
+- [free-datasets-APIs](https://github.com/nenalukic/free-datasets-APIs/tree/main) A collection on github of freely available datasets and APIs for different topics like weather, agriculture, etc.
+
+
 ## API´s
 
 - [Request to an WMS (Web Map Service)](https://www.geodaten.niedersachsen.de/startseite/allgemeine_informationen/downloads/leitfaden_und_checklisten/leitfaeden-der-gdi-ni-127645.html)
@@ -17,7 +22,7 @@ Here i want to list all types of spatial data and how to access them in a reason
 
 ## Weather Data
 
-- [WorldClim](https://www.worldclim.org/data/worldclim21.html) WorldClim is a set of global climate layers (climate grids) with a spatial resolution of about 1 km². It is based on weather station data and provides information on temperature and precipitation. The data is available as raster files and can be accessed via an API. The API is documented [here](https://worldclim.org/data/worldclim21.html).
+- [WorldClim](https://www.worldclim.org/data/worldclim21.html) WorldClim is a set of global climate layers (climate grids) with a spatial resolution of about 1 km². It is based on weather station data and provides information on temperature and precipitation. The data is available as raster files and can be accessed via an API. There might be an [R package](https://brunomioto.github.io/WorldClimData/) to download data from WorldClimData.
     + Mean, minimum, and maximum temperature
     + Precipitation
     + Solar radiation
@@ -36,7 +41,7 @@ Here i want to list all types of spatial data and how to access them in a reason
 
 ## Soil Data
 
-- [Soilgrids](https://soilgrids.org/) Soilgrids is a global gridded soil information system operating at a resolution of 250 m. It is based on machine learning and remote sensing and provides soil information for the entire globe. This data is not actually measured and was shown to underestimate extreme soil distributions. It is available as a raster file and can be accessed via an API. The API is documented [here](https://rest.soilgrids.org/query.html).
+- [Soilgrids](https://soilgrids.org/) Soilgrids is a global gridded soil information system operating at a resolution of 250 m. It is based on machine learning and remote sensing and provides soil information for the entire globe. This data is not actually measured and was shown to underestimate extreme soil distributions. It is available as a raster file and can be accessed via an API. The API is documented [here](https://rest.soilgrids.org/query.html). And there is a soilgrids [r package](https://github.com/one-acre-fund/soilgrids).
     + Percentage of sand, silt, clay
     + Bulk density
     + Organic carbon content
@@ -54,3 +59,7 @@ Here i want to list all types of spatial data and how to access them in a reason
 
 - [Copernicus Global Land Service](https://land.copernicus.eu/global/) The Copernicus Global Land Service provides information on land cover and land use at a global scale. It is based on satellite data and provides information on land cover, land use, and changes in land cover over time. The data is available as raster files and can be accessed via an API.
 - [EuroCrops Dataset](https://zenodo.org/records/10118572) from Zenodo is a open source dataset which tries to provide information about the crop type of each individual field in a unified an machine-readable syntax.
+
+## Location / Mobility Data
+
+ - [openroute service](https://openrouteservice.org/) provides an API and a [R package](https://github.com/GIScience/openrouteservice-r) to access routing and isochrone data.

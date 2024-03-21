@@ -1,0 +1,19 @@
+
+## Basic Statistics
+
+- [Geostatistics Fu Berlin](https://www.geo.fu-berlin.de/en/v/soga-r/Advances-statistics/Geostatistics/index.html)
+
+
+## Deep Learning with Satellite Data
+
+{{< video https://www.youtube.com/watch?v=Z-ycc4aAnmY >}}
+
+
+### Prediction of Soil Water content
+
+- [Paper](https://www.mdpi.com/2072-4292/14/4/1023)
+
+
+### Digital Twin of terrestial water cycle
+
+- [Paper](https://www.frontiersin.org/journals/science/articles/10.3389/fsci.2023.1190191/full?utm_source=linkedin&utm_medium=social&utm_content=art-abn-s&utm_campaign=braw_fsci-im_03-24_fsci_en_n--ww)

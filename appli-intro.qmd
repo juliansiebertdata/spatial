@@ -1,9 +1,15 @@
 Here we want to show basic worflows in spatial science.
 
-I will start using this video.
+I will start using this ressources:
 
 - [Using R for Gis and Mapping](https://youtu.be/TZ8CxNNHiUU?si=Xesx-HnRDz2-iHVI)
+- [Analyzing Geospatial Data in R](https://www.youtube.com/watch?app=desktop&v=DD7bXonh-_E)
+- [Tidycensus Presentation](https://walker-data.com/umich-workshop-2024/mapping-census-data/#/getting-started-with-tidycensus)
 
+
+## Soil Science
+
+- [Statistics for Soil Survey](https://ncss-tech.github.io/stats_for_soil_survey/book/index.html)
 
 
 ### Soil Organic Carbon Mapping
@@ -15,6 +21,8 @@ I will start using this video.
 ![Soil Map from Benjamin Nowak](images/soil-map.jpg)
 
 With the [github-repository](https://github.com/BjnNowak/TidyTuesday/blob/main/SC_texture.R) of Benjamin Nowak, we can visualize the soil distribution in France.
+
+He also uses the [ggtern](http://www.ggtern.com/d/2.2.0/) package to visualize the soil distribution in France.
 
 
 ### Visualize Drought
@@ -35,3 +43,8 @@ Data from [The World Bank](https://datacatalog.worldbank.org/search/dataset/0061
 ### Research on Cover Crop Adoption
 
 - [Paper](https://link.springer.com/article/10.1007/s13593-022-00770-y)
+
+
+### Visualize recent Satelite Data 
+
+{{< video https://www.youtube.com/watch?app=desktop&v=GzyYLA_0xcc&feature=youtu.be >}}

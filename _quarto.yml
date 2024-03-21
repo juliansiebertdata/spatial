@@ -7,9 +7,11 @@ book:
   date: "19.3.2024"
   chapters:
     - index.qmd
-    - intro.qmd
-    - summary.qmd
     - references.qmd
+    - data-intro.qmd
+    - data-sources.qmd
+    - appli-intro.qmd
+    - stat-intro.qmd
     - map-intro.qmd
 
 bibliography: references.bib

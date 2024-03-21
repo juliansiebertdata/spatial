@@ -4,119 +4,279 @@
     "href": "index.html",
     "title": "Spatial Science and Remote Sensing",
     "section": "",
-    "text": "0.1 Workshops / Conference",
+    "text": "0.1 Collection of Ressources",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Workshops / Conference</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Collection of Ressources</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#collection-of-ressources",
+    "href": "index.html#collection-of-ressources",
+    "title": "Spatial Science and Remote Sensing",
+    "section": "",
+    "text": "geospatial leraning",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Collection of Ressources</span>"
     ]
   },
   {
     "objectID": "index.html#workshops-conference",
     "href": "index.html#workshops-conference",
     "title": "Spatial Science and Remote Sensing",
-    "section": "",
-    "text": "OpenGeoHub Summer School 2023",
+    "section": "0.2 Workshops / Conference",
+    "text": "0.2 Workshops / Conference\n\nOpenGeoHub Summer School 2023\nStatistics and Geodata Analysis Using R - FU Berlin",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Workshops / Conference</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Collection of Ressources</span>"
     ]
   },
   {
     "objectID": "index.html#books",
     "href": "index.html#books",
     "title": "Spatial Science and Remote Sensing",
-    "section": "0.2 Books",
-    "text": "0.2 Books\n\nAn Introduction to Spatial Data Analysis\nAdvanced Remote Sensing Analysis\nSpatial Data Science",
+    "section": "0.3 Books",
+    "text": "0.3 Books\n\nAn Introduction to Spatial Data Analysis\nAdvanced Remote Sensing Analysis\nSpatial Data Science\nGeocomputation with R",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Workshops / Conference</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Collection of Ressources</span>"
     ]
   },
   {
     "objectID": "index.html#people",
     "href": "index.html#people",
     "title": "Spatial Science and Remote Sensing",
-    "section": "0.3 People",
-    "text": "0.3 People\n\nRafael H. M. Pereira: Transport and Accessibilita Analysis\nRobin Lovelace: Transport and Geocomputation Analysis\nMike Mahoney: SPatial Data Science in Ecology, API for Satellite Imagery\nBenjamin Nowak: Agronomist !! (France and Plotting)\nJakub Nowosad: Geocomputation and Spatial Data Science, Landscape Modelling\nMilos Popovic: Workflows and Crazy Maps and his Blog",
+    "section": "0.4 People",
+    "text": "0.4 People\n\nRafael H. M. Pereira: Transport and Accessibilita Analysis\nRobin Lovelace: Transport and Geocomputation Analysis\nMike Mahoney: SPatial Data Science in Ecology, API for Satellite Imagery\nBenjamin Nowak: Agronomist !! (France and Plotting)\nJakub Nowosad: Geocomputation and Spatial Data Science, Landscape Modelling\nMilos Popovic: Workflows and Crazy Maps and his Blog",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Workshops / Conference</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Collection of Ressources</span>"
     ]
   },
   {
     "objectID": "index.html#get-data",
     "href": "index.html#get-data",
     "title": "Spatial Science and Remote Sensing",
-    "section": "0.4 Get Data",
-    "text": "0.4 Get Data\n\nrsi-package to download satellite images also here https://geocompx.org/post/2024/rsi-bp1/",
+    "section": "0.5 Get Data",
+    "text": "0.5 Get Data\n\nrsi-package to download satellite images also here https://geocompx.org/post/2024/rsi-bp1/",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Workshops / Conference</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Collection of Ressources</span>"
     ]
   },
   {
     "objectID": "index.html#courses",
     "href": "index.html#courses",
     "title": "Spatial Science and Remote Sensing",
-    "section": "0.5 Courses",
-    "text": "0.5 Courses\n\nSpatial Data Science Courses",
+    "section": "0.6 Courses",
+    "text": "0.6 Courses\n\nSpatial Data Science Courses",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Workshops / Conference</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Collection of Ressources</span>"
     ]
   },
   {
-    "objectID": "summary.html",
-    "href": "summary.html",
-    "title": "3  Summary",
+    "objectID": "data-intro.html",
+    "href": "data-intro.html",
+    "title": "2  load/install packages",
     "section": "",
-    "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2",
+    "text": "2.1 References\nThere are several really good ressources in the Internet to learn about spatial data, but I really want to Recommend the Book Spatial Data Science: with applications in R from Edzer Pebesma and Roger Bivand.",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Summary</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>load/install packages</span>"
+    ]
+  },
+  {
+    "objectID": "data-intro.html#references",
+    "href": "data-intro.html#references",
+    "title": "2  load/install packages",
+    "section": "",
+    "text": "Geocomputation with R",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>load/install packages</span>"
+    ]
+  },
+  {
+    "objectID": "data-intro.html#work-with-spatial-data",
+    "href": "data-intro.html#work-with-spatial-data",
+    "title": "2  load/install packages",
+    "section": "2.2 Work with spatial data",
+    "text": "2.2 Work with spatial data\nQuaote : There is only one way. The tidy-way.\nWe will wirk with spatial data the tidy way.\n\nWorkshop/Introduction here\nGeocomputation with R\n\nAnother Workshop here.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>load/install packages</span>"
+    ]
+  },
+  {
+    "objectID": "data-sources.html",
+    "href": "data-sources.html",
+    "title": "3  Collections",
+    "section": "",
+    "text": "3.1 API´s",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Collections</span>"
+    ]
+  },
+  {
+    "objectID": "data-sources.html#apis",
+    "href": "data-sources.html#apis",
+    "title": "3  Collections",
+    "section": "",
+    "text": "Request to an WMS (Web Map Service)\nEarth Engine Data Catalog",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Collections</span>"
+    ]
+  },
+  {
+    "objectID": "data-sources.html#databases",
+    "href": "data-sources.html#databases",
+    "title": "3  Collections",
+    "section": "3.2 Databases",
+    "text": "3.2 Databases\n\nINSPIRE Geoportal der EU mit Daten zu Umwelt, Landwirtschaft, etc.\nAgri4Cast Ressources Portal der EU enthält Daten zur Landwirtschaft, Wetter, Boden, etc.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Collections</span>"
+    ]
+  },
+  {
+    "objectID": "data-sources.html#satellite-data",
+    "href": "data-sources.html#satellite-data",
+    "title": "3  Collections",
+    "section": "3.3 Satellite Data",
+    "text": "3.3 Satellite Data\n\nrsi-package to download satellite images also here https://geocompx.org/post/2024/rsi-bp1/",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Collections</span>"
+    ]
+  },
+  {
+    "objectID": "data-sources.html#weather-data",
+    "href": "data-sources.html#weather-data",
+    "title": "3  Collections",
+    "section": "3.4 Weather Data",
+    "text": "3.4 Weather Data\n\nWorldClim WorldClim is a set of global climate layers (climate grids) with a spatial resolution of about 1 km². It is based on weather station data and provides information on temperature and precipitation. The data is available as raster files and can be accessed via an API. There might be an R package to download data from WorldClimData.\n\nMean, minimum, and maximum temperature\nPrecipitation\nSolar radiation\nWind speed\n\nERA5 ERA5 is a reanalysis dataset that provides global weather data at a resolution of 0.25°. It is based on a combination of weather station data, satellite data, and weather models. The data is available as raster files and can be accessed via an API. The API is documented here.\n\nTemperature\nPrecipitation\nWind speed\nSolar radiation\nHumidity\n\nCHIRPS CHIRPS is a global rainfall dataset that provides information on precipitation at a resolution of 0.05°. It is based on a combination of weather station data and satellite data. The data is available as raster files and can be accessed via an API. The API is documented here.\n\n\n3.4.1 Precipitation Data\n\npRecipe Package in R makes a lot of common precipitation data accessible. There is a video on how to do this here",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Collections</span>"
+    ]
+  },
+  {
+    "objectID": "data-sources.html#soil-data",
+    "href": "data-sources.html#soil-data",
+    "title": "3  Collections",
+    "section": "3.5 Soil Data",
+    "text": "3.5 Soil Data\n\nSoilgrids Soilgrids is a global gridded soil information system operating at a resolution of 250 m. It is based on machine learning and remote sensing and provides soil information for the entire globe. This data is not actually measured and was shown to underestimate extreme soil distributions. It is available as a raster file and can be accessed via an API. The API is documented here. And there is a soilgrids r package.\n\nPercentage of sand, silt, clay\nBulk density\nOrganic carbon content\npH\nCation exchange capacity -WoSIS contains harmonized soil data from all over the globe. It is actually measured data. The way to access it with R is described here",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Collections</span>"
+    ]
+  },
+  {
+    "objectID": "data-sources.html#drought-data",
+    "href": "data-sources.html#drought-data",
+    "title": "3  Collections",
+    "section": "3.6 Drought Data",
+    "text": "3.6 Drought Data\n\nGDO / CDI Global Drought Observatory with the Combined Drought Inidicator (CDI) provides information about changes in drought indicators for europe and worldwide.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Collections</span>"
+    ]
+  },
+  {
+    "objectID": "data-sources.html#land-use-data",
+    "href": "data-sources.html#land-use-data",
+    "title": "3  Collections",
+    "section": "3.7 Land Use Data",
+    "text": "3.7 Land Use Data\n\nCopernicus Global Land Service The Copernicus Global Land Service provides information on land cover and land use at a global scale. It is based on satellite data and provides information on land cover, land use, and changes in land cover over time. The data is available as raster files and can be accessed via an API.\nEuroCrops Dataset from Zenodo is a open source dataset which tries to provide information about the crop type of each individual field in a unified an machine-readable syntax.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Collections</span>"
+    ]
+  },
+  {
+    "objectID": "data-sources.html#location-mobility-data",
+    "href": "data-sources.html#location-mobility-data",
+    "title": "3  Collections",
+    "section": "3.8 Location / Mobility Data",
+    "text": "3.8 Location / Mobility Data\n\nopenroute service provides an API and a R package to access routing and isochrone data.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Collections</span>"
+    ]
+  },
+  {
+    "objectID": "appli-intro.html",
+    "href": "appli-intro.html",
+    "title": "4  Soil Science",
+    "section": "",
+    "text": "Here we want to show basic worflows in spatial science.\nI will start using this ressources:\n\nUsing R for Gis and Mapping\nAnalyzing Geospatial Data in R\nTidycensus Presentation\nStatistics for Soil Survey\n\n\n4.0.1 Soil Organic Carbon Mapping\n\nSoil Organic Carbon Mapping\n\n\n\n4.0.2 Visualize Soil distribution\n\n\n\nSoil Map from Benjamin Nowak\n\n\nWith the github-repository of Benjamin Nowak, we can visualize the soil distribution in France.\nHe also uses the ggtern package to visualize the soil distribution in France.\n\n\n4.0.3 Visualize Drought\nBenjamin Novaks GitHub page has a repository for visualizing drought. Data came from Global Drought Observatory.\n\n\n\nDrought Plot\n\n\n\n\n4.0.4 Agricultural DOmestic Product\nData from The World Bank and visualized by\n\n\n4.0.5 Great Tables with Maps\nOur cultivated Planet by Benjamin Nowak. and Data from the FAO Stat Website and the expalantion of the project here\n\n\n4.0.6 Research on Cover Crop Adoption\n\nPaper\n\n\n\n4.0.7 Visualize recent Satelite Data",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Soil Science</span>"
+    ]
+  },
+  {
+    "objectID": "stat-intro.html",
+    "href": "stat-intro.html",
+    "title": "5  Basic Statistics",
+    "section": "",
+    "text": "5.1 Deep Learning with Satellite Data",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Basic Statistics</span>"
+    ]
+  },
+  {
+    "objectID": "stat-intro.html#deep-learning-with-satellite-data",
+    "href": "stat-intro.html#deep-learning-with-satellite-data",
+    "title": "5  Basic Statistics",
+    "section": "",
+    "text": "5.1.1 Prediction of Soil Water content\n\nPaper\n\n\n\n5.1.2 Digital Twin of terrestial water cycle\n\nPaper",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Basic Statistics</span>"
     ]
   },
   {
     "objectID": "map-intro.html",
     "href": "map-intro.html",
-    "title": "4  load/install packages",
+    "title": "6  load/install packages",
     "section": "",
-    "text": "4.1 Ressources and Links",
+    "text": "6.1 Ressources and Links",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>load/install packages</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>load/install packages</span>"
     ]
   },
   {
     "objectID": "map-intro.html#ressources-and-links",
     "href": "map-intro.html#ressources-and-links",
-    "title": "4  load/install packages",
+    "title": "6  load/install packages",
     "section": "",
-    "text": "THE Book\nPresentations",
+    "text": "Making Maps with R\nGeospatial Data Science\nPresentations",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>load/install packages</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>load/install packages</span>"
     ]
   },
   {
     "objectID": "map-intro.html#kind-of-maps",
     "href": "map-intro.html#kind-of-maps",
-    "title": "4  load/install packages",
-    "section": "4.2 Kind of Maps",
-    "text": "4.2 Kind of Maps\nThere are several different Maptypes we can choose to visualize our data. The most common ones are: - Choropleth Maps - Hexbin Maps - Cartograms - Flow Maps - Bubble Maps\nFollowing we will explore how to create these maps with R.\nGreat Library by Benjamin Nowak with code and here without code\n\n\n\nDifferent Kind of Maps\n\n\nOverviw Image code here\n\n4.2.1 Hexagon / Hexbin Maps\n\n\n\nBivariate Hexagons\n\n\nWith the code here\n\nfrex package and video below!\nUber Hexbin Package (see video below)\n\n\n\n4.2.2 Bubble Maps\n\n\n\nBubble Map\n\n\nWith the code here\n\nbertin package to make valued bubble maps from raster files.\n\n\n\n4.2.3 R for GIS and Mapping",
+    "title": "6  load/install packages",
+    "section": "6.2 Kind of Maps",
+    "text": "6.2 Kind of Maps\nThere are several different Maptypes we can choose to visualize our data. The most common ones are: - Choropleth Maps - Hexbin Maps - Cartograms - Flow Maps - Bubble Maps\nFollowing we will explore how to create these maps with R.\nGreat Library by Benjamin Nowak with code and here without code\n\n\n\nDifferent Kind of Maps\n\n\nOverviw Image code here\n\n6.2.1 Hexagon / Hexbin Maps\n\n\n\nBivariate Hexagons\n\n\nWith the code here\n\nfrex package and video below!\nUber Hexbin Package (see video below)\n\n\n\n6.2.2 Bubble Maps\n\n\n\nBubble Map\n\n\nWith the code here\n\nbertin package to make valued bubble maps from raster files.\n\n\n\n6.2.3 R for GIS and Mapping",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>load/install packages</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>load/install packages</span>"
     ]
   },
   {
     "objectID": "map-intro.html#leaflet",
     "href": "map-intro.html#leaflet",
-    "title": "4  load/install packages",
-    "section": "4.3 Leaflet",
-    "text": "4.3 Leaflet\n\n4.3.1 leafdrop\nMaybe (dont know if its still online) https://github.com/r-spatial/leafpop to add tables and graphs to popups in a map.",
+    "title": "6  load/install packages",
+    "section": "6.3 Leaflet",
+    "text": "6.3 Leaflet\n\n6.3.1 leafdrop\nMaybe (dont know if its still online) https://github.com/r-spatial/leafpop to add tables and graphs to popups in a map.",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>load/install packages</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>load/install packages</span>"
     ]
   },
   {
     "objectID": "map-intro.html#rayshader",
     "href": "map-intro.html#rayshader",
-    "title": "4  load/install packages",
-    "section": "4.4 Rayshader",
-    "text": "4.4 Rayshader\n\nMilos Popovic and Youtube Channel",
+    "title": "6  load/install packages",
+    "section": "6.4 Rayshader",
+    "text": "6.4 Rayshader\n\nMilos Popovic and Youtube Channel",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>load/install packages</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>load/install packages</span>"
+    ]
+  },
+  {
+    "objectID": "map-intro.html#vector-tiles-map",
+    "href": "map-intro.html#vector-tiles-map",
+    "title": "6  load/install packages",
+    "section": "6.5 Vector Tiles Map",
+    "text": "6.5 Vector Tiles Map\n\nVextor Tiles Blogpost",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>load/install packages</span>"
     ]
   }
 ]

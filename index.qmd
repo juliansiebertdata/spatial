@@ -1,15 +1,20 @@
 
+## Collection of Ressources
+
+- [geospatial leraning](https://github.com/spcanelon/geospatial-learning)
+
 
 ## Workshops / Conference
 
 - [OpenGeoHub Summer School 2023](https://av.tib.eu/media/63088)
+- [Statistics and Geodata Analysis Using R - FU Berlin](https://www.geo.fu-berlin.de/en/v/soga-r/index.html)
 
 ## Books
 
 - [An Introduction to Spatial Data Analysis](http://book.ecosens.org/gsbook/)
 - [Advanced Remote Sensing Analysis](http://book.ecosens.org/advanced-remote-sensing-book/)
 - [Spatial Data Science](https://r-spatial.org/book/)
-- 
+- [Geocomputation with R](https://geocompx.org/book/)
 
 
 ## People 
