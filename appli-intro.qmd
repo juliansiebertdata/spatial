@@ -4,7 +4,7 @@ I will start using this ressources:
 
 - [Using R for Gis and Mapping](https://youtu.be/TZ8CxNNHiUU?si=Xesx-HnRDz2-iHVI)
 - [Analyzing Geospatial Data in R](https://www.youtube.com/watch?app=desktop&v=DD7bXonh-_E)
-- [Tidycensus Presentation](https://walker-data.com/umich-workshop-2024/mapping-census-data/#/getting-started-with-tidycensus)
+- [Tidycensus Presentation](https://walker-data.com/umich-workshop-2023/spatial-data/#1) and the [video](https://www.youtube.com/watch?v=ahPquLT6gxA)
 
 
 ## Soil Science
@@ -46,5 +46,11 @@ Data from [The World Bank](https://datacatalog.worldbank.org/search/dataset/0061
 
 
 ### Visualize recent Satelite Data 
+
+ - [STAC Data](https://www.youtube.com/watch?v=NrzsuzMrtRg) 
+
+ {{< video https://www.youtube.com/watch?v=NrzsuzMrtRg >}}
+
+ Here is some video about the rstac package in R to download stac data. with the workshop material [here](https://github.com/MicheleTobias/workshop-stac)
 
 {{< video https://www.youtube.com/watch?app=desktop&v=GzyYLA_0xcc&feature=youtu.be >}}
