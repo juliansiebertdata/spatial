@@ -5,4 +5,5 @@
 .vscode/
 plots/
 data/country-shapes/
+sources/
 /.quarto/
