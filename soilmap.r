@@ -7,7 +7,18 @@ if (!"pacman" %in% installed.packages()) {
 
 ## load librarys ----
 
-pacman::p_load(dplyr, janitor, readxl, sf, rnaturalearth, here, ggtext, stringr)
+pacman::p_load(
+  dplyr,
+  janitor,
+  readxl,
+  sf,
+  here,
+  ggtext,
+  stringr,
+  ggplot2,
+  cartography
+)
+
 
 # load soil data ----- ----------------------------------------------------
 # -> SKIP if you can read tidy data at Plot section
@@ -150,26 +161,23 @@ soil_tbl <- st_read(
   )
 )
 
-glimpse(soil_tbl)
 
+## prepare soil data ----
 soil <- soil_tbl %>%
-  filter(tiefenstufe_untergrenze < 30) %>%
+  filter(depth < 30) %>%
   mutate(
-    sand = as.numeric(sand) / 100,
-    ton = as.numeric(ton) / 100,
-    schluff = as.numeric(schluff) / 100
+    sand = as.numeric(sand_perc) / 100,
+    clay = as.numeric(clay_perc) / 100,
+    silt = as.numeric(silt_perc) / 100
   ) %>%
-  tidyr::drop_na(sand, schluff, ton) %>%
+  tidyr::drop_na(sand, clay, silt) %>%
   mutate(
-    clay = ton,
-    silt = schluff,
-    sand = sand,
     x = clay,
     y = silt,
     z = sand
   ) %>%
   select(
-    point_id = point_id,
+    point_id = sample_site_id,
     clay, silt, sand,
     x, y, z
   ) %>%
@@ -201,17 +209,16 @@ soil <- soil_tbl %>%
     cl == "ACA" ~ "p9"
   ))
 
-
 ## give soil attribute to hexes based on nearest sample location ----
 
 # Calculate centroids of polygons
-hex_centroids <- st_centroid(hex)
+hex_centroids <- st_centroid(germany_hex)
 
 # Find nearest points in soil to centroids and add their data to hex_centroids
 # then add polygon geometrys back to the data
 soil_hex <- st_join(hex_centroids, soil, join = st_nearest_feature) %>%
   st_drop_geometry() %>%
-  left_join(hex, by = "h3_address") %>%
+  left_join(germany_hex, by = "h3_address") %>%
   st_as_sf()
 
 
@@ -594,3 +601,171 @@ pacman::p_load(patchwork)
 right <- soil_de_clay / soil_de_silt / soil_de_sand
 
 ggsave(plot = right, here::here("plots", "soil_map_facet.png"), width = 30, height = 90, units = "cm")
+
+
+# other soil attributes --------------------------------------------------------
+
+## make ggplot2 function ----
+germany_hex_map <- function(data, fill) {
+  ggplot2::ggplot() +
+    ggplot2::geom_sf(
+      data = data,
+      aes(fill = {{ fill }}),
+      color = alpha("white", 0)
+    ) +
+    ggplot2::guides(fill = guide_coloursteps(
+      barwidth = 3,
+      barheight = 15,
+      label.position = "left",
+      ticks = TRUE,
+      title.vjust = 5
+    )) +
+    ggplot2::theme_void() +
+    ggplot2::theme(
+      plot.background = element_rect(fill = NA, color = NA),
+      legend.position = c(1.1, 0.5),
+      legend.title = element_text(face = "bold", size = 22, color = "grey30"),
+      legend.text = element_text(size = 12, face = "bold", color = "grey30"),
+      legend.justification = "left",
+      plot.margin = margin(l = 1, r = 8, t = 1, b = 1, "cm"),
+      plot.title = element_markdown(
+        hjust = 0.5,
+        vjust = 0.5,
+        size = 12,
+        face = "bold",
+        color = "grey30"
+      ),
+      plot.subtitle = element_markdown(
+        hjust = 0.5,
+        vjust = 0.5,
+        size = 8,
+        color = "grey30"
+      )
+    )
+}
+
+# convert problematic data
+soil_hex_tbl <- soil_tbl %>%
+  filter(depth < 30) %>%
+  mutate(
+    sand = as.numeric(sand_perc) / 100,
+    clay = as.numeric(clay_perc) / 100,
+    silt = as.numeric(silt_perc) / 100
+  )
+
+# Calculate centroids of polygons
+hex_centroids <- st_centroid(germany_hex)
+
+# Find nearest points in soil to centroids and add their data to hex_centroids
+# then add polygon geometrys back to the data
+soil_hex_tbl <- st_join(hex_centroids, soil_hex_tbl, join = st_nearest_feature) %>%
+  st_drop_geometry() %>%
+  left_join(germany_hex, by = "h3_address") %>%
+  st_as_sf()
+
+## make function to cut data based on quantiles ----
+quantile_cut <- function(data, var, n_quantiles) {
+  # Ensure var is a symbol
+  var <- rlang::sym(var)
+
+  # Generate the quantile breaks
+  quantile_breaks <- quantile(data[[var]], probs = seq(0, 1, 1 / n_quantiles))
+
+  # Generate the labels for the quantiles
+  quantile_labels <- paste("[", quantile_breaks[-length(quantile_breaks)], ", ", quantile_breaks[-1], "]", sep = "")
+
+  # Add the new column
+  data_new <- data %>%
+    dplyr::mutate(
+      quantile_range := cut(
+        !!var,
+        breaks = quantile_breaks,
+        labels = quantile_labels,
+        include.lowest = TRUE
+      )
+    )
+
+  return(data_new)
+}
+
+# make soil carbon map -----------------
+
+## continuous color palette ----
+
+pal_cont <- cartography::carto.pal(pal1 = "brown.pal", n1 = 10)
+
+soil_carbon_map_cont <- germany_hex_map(
+  soil_hex_tbl,
+  fill = organic_carbon_stock_mg_per_ha_topsoil
+) +
+  ggplot2::scale_fill_gradientn(
+    colors = pal_cont,
+    name = "",
+    labels = function(x) {
+      paste(
+        round(x, digits = 0), "t/ha"
+      )
+    }
+  ) +
+  labs(title = "Equally Binned Colour Palette")
+
+## quantile color palette ----
+
+carbon_tbl <- quantile_cut(soil_hex_tbl, "organic_carbon_stock_mg_per_ha_topsoil", 5)
+
+pal <- cartography::carto.pal(pal1 = "brown.pal", n1 = 5)
+
+soil_carbon_map <- germany_hex_map(
+  carbon_tbl,
+  fill = quantile_range
+) +
+  ggplot2::scale_fill_manual(
+    values = pal,
+    name = "",
+    labels = function(x) {
+      paste(
+        round(x, digits = 0), "t/ha"
+      )
+    }
+  ) +
+  labs(title = "Quantile Binned Colour Palette")
+
+
+## combine carbon maps ----
+pacman::p_load(patchwork)
+
+carbon_maps <- (soil_carbon_map_cont | soil_carbon_map) +
+  plot_annotation(
+    title = "MAPS CAN LIE!",
+    subtitle = "Calculated Soil Carbon Content of Topsoil (0-30cm) in metric tons per hectare",
+    caption = "**Data** German Soil Assessment (2020) **| Plot** Julian Siebert **| Tools** R + GDAL, VSCode ",
+    theme = theme(
+      plot.title = element_markdown(
+        hjust = 0.5,
+        vjust = 0.5,
+        size = 18,
+        face = "bold",
+        color = "grey30",
+        margin = margin(20, 0, 20, 0)
+      ),
+      plot.subtitle = element_markdown(
+        hjust = 0.5,
+        vjust = 0.5,
+        size = 12,
+        color = "grey30"
+      ),
+      plot.caption = element_markdown(
+        hjust = 0,
+        size = 8,
+        color = "grey30"
+      )
+    )
+  )
+
+ggsave(
+  plot = carbon_maps,
+  here::here("plots", "soil_carbon_maps.png"),
+  width = 60,
+  height = 35,
+  units = "cm"
+)
