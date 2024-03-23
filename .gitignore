@@ -3,6 +3,6 @@
 .RData
 .Ruserdata
 .vscode/
-/plots/
-/data/country-shapes/
+plots/
+data/country-shapes/
 /.quarto/
