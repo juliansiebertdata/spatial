@@ -1,108 +1,144 @@
 # SETUP --------------------------
 
-## Load the required libraries ----
+## install packman if necessary
+if (!"pacman" %in% installed.packages()) {
+  install.packages("pacman")
+}
 
-pacman::p_load(dplyr, janitor, readxl, sf, rnaturalearth, here, ggtext)
+## load librarys ----
 
-## simulate data ----
+pacman::p_load(dplyr, janitor, readxl, sf, rnaturalearth, here, ggtext, stringr)
 
-set.seed(123)
+# load soil data ----- ----------------------------------------------------
+# data from https://www.openagrar.de/receive/openagrar_mods_00054877
+# erste bodenzustandserhebung landwirtschaft - kerndatensatz
 
-
-# Simulate yield outcomes for two treatments (control and product)
-yield_data <- tibble(
-  trial_id = rep(1:100, each = 2),
-)
-
-yield_data <- yield_data %>%
-  mutate(
-    treatment = rep(c("control", "product"), times = 100),
-    yield = rnorm(200, mean = 100, sd = 10)
+soil_data <- readxl::read_xlsx(
+  here::here(
+    "data/german-soil-assessment/data-raw",
+    "soil-sample-sites-germany.xlsx"
   )
-
-# Generate longitude and latitude values for each trial field
-trial_coords <- tibble(
-  trial_id = 1:100,
-  longitude = runif(100, min = 5.87, max = 15.04),
-  latitude = runif(100, min = 47.27, max = 55.06)
-)
-
-# Combine yield data and trial coordinates
-combined_data <- left_join(yield_data, trial_coords, by = "trial_id")
-
-relative_yield <- combined_data %>%
-  group_by(trial_id) %>%
-  mutate(
-    relative_yield = (yield[treatment == "product"] - yield[treatment == "control"]) / yield[treatment == "control"],
-    yield_relative_perc = relative_yield * 100
-  ) %>%
-  ungroup()
-
-relative_yield <- st_as_sf(relative_yield,
-  coords = c("longitude", "latitude"),
-  crs = 4326
-)
-
-
-# CREATE PLOT -----------------------------------------------------------------
-
-# get shape of germany map ---
-germany <- rnaturalearth::ne_countries(scale = "large", country = "germany", returnclass = "sf") %>%
-  st_transform(4326) %>%
-  select(geometry)
-
-# make basic germany map ---
-base_map <- ggplot2::ggplot(data = germany) +
-  ggplot2::geom_sf(color = "lightgrey", fill = "lightgrey") +
-  ggplot2::theme_void()
-
-# Filter points inside Germany multipolygon
-filtered_data <- st_intersection(relative_yield, germany)
-
-# Plot filtered data
-filtered_map <- base_map +
-  ggplot2::geom_sf(
-    data = filtered_data,
-    shape = 21,
-    fill = "#53b57f",
-    color = "transparent",
-    size = 4
-  ) +
-  ggplot2::geom_sf(
-    data = filtered_data,
-    shape = 21,
-    color = "lightgrey",
-    fill = "transparent",
-    size = 4
-  )
-
-filtered_map
-
-
-## load soil data -----
-
-soil_data <- readxl::read_xlsx(here::here("data", "soil-sample-sites-germany.xlsx")) %>% janitor::clean_names()
+) %>% janitor::clean_names()
 
 soil_data <- soil_data %>%
   select(-bundesland, -probenahme_monat, -probenahme_jahr, -boden_var_typ_sub)
 
 
-soil_lab_data <- readxl::read_xlsx(here::here("data", "soil-labvalues-germany.xlsx")) %>% janitor::clean_names()
+soil_lab_data <- readxl::read_xlsx(
+  here::here(
+    "data/german-soil-assessment/data-raw",
+    "soil-labvalues-germany.xlsx"
+  )
+) %>% janitor::clean_names()
 
+## tidy data ----
 soil_lab_data <- soil_lab_data %>%
   filter(tiefenstufe_untergrenze <= 30) %>%
   select(
-    point_id, tiefenstufe_untergrenze, p_h_h2o, tc, toc, tn, trd_fb,
-    sand, ton, schluff
+    point_id,
+    tiefenstufe_untergrenze,
+    p_h_h2o,
+    ec_h2o,
+    tc,
+    toc,
+    tic,
+    tn,
+    trd_fb,
+    sand, ton, schluff,
+    bodenart
   )
 
-
+# join measurements and site metadata based on point_id
 soil_tbl <- left_join(soil_lab_data, soil_data, by = "point_id")
 
-soil_tbl <- st_as_sf(soil_tbl, coords = c("xcoord", "ycoord"), crs = 32632) %>%
+# create POINT - geometry
+soil_tbl <- st_as_sf(
+  soil_tbl,
+  coords = c("xcoord", "ycoord"),
+  crs = 32632
+) %>%
   st_transform(4326)
 
-## plot soil_tbl on germany_map ----
+# rename columns and remove characters from numeric vectors
+soil_data_tidy <- soil_tbl %>%
+  rename(
+    sample_site_id = point_id,
+    depth = tiefenstufe_untergrenze,
+    ph_water = p_h_h2o,
+    ec_water = ec_h2o,
+    totalcarbon_g_per_kg = tc,
+    organiccarbon_g_per_kg = toc,
+    inorganiccarbon_g_per_kg = tic,
+    organic_carbon_stock_mg_per_ha_topsoil = kv_0_30,
+    organic_carbon_stock_mg_per_ha_subsoil = kv_30_100,
+    totalnitrogen_g_per_kg = tn,
+    dry_bulk_density_g_per_cm3 = trd_fb,
+    sand_perc = sand,
+    clay_perc = ton,
+    silt_perc = schluff,
+    soil_class = bodenart,
+    soil_type = hauptbodentyp,
+    soil_climate_zone = bodenklimaraum_name,
+    landuse_type = landnutzung,
+    groundwater_level_cm = grundwa_stand,
+    moorland_logical = bze_moor,
+    moorland_depth_cm = moormaechtigkeit,
+    moorland_peatdepth_cm = torfmaechtigkeit,
+    relief_type = reliefformtyp,
+    relief_position = lage_im_relief,
+    releif_slope = neigung,
+    releif_curvature = woelbung,
+    releif_exposition = exposition
+  ) %>%
+  select(-grundwa_stufe) %>%
+  mutate(
+    groundwater_level_cm = stringr::str_replace_all(groundwater_level_cm, ">", ""),
+    across(where(is.character), ~ stringr::str_replace_all(.x, "NA", ""))
+  )
+
+## write to xlsx and gpkg ----
+openxlsx2::write_xlsx(
+  st_drop_geometry(soil_data_tidy %>%
+    mutate(
+      longitude = st_coordinates(geometry)[, 1],
+      latitude = st_coordinates(geometry)[, 2]
+    )),
+  here::here(
+    "data/german-soil-assessment",
+    "german_soil_assessment.xlsx"
+  ),
+  overwrite = TRUE
+)
+
+st_write(
+  soil_data_tidy,
+  here::here(
+    "data/german-soil-assessment",
+    "german-soil-assessment.gpkg"
+  )
+)
+
+# CREATE PLOT -----------------------------------------------------------------
+
+## get shape of germany map and hexagon map ---
+germany <- rnaturalearth::ne_countries(scale = "large", country = "germany", returnclass = "sf") %>%
+  st_transform(4326) %>%
+  select(name, geometry)
+
+
+st_write(
+  germany,
+  here::here(
+    "data/country-shapes/germany",
+    "germany-polygon.gpkg"
+  )
+)
+
+
+# make basic germany map ---
+base_map <- ggplot2::ggplot(data = germany) +
+  ggplot2::geom_sf(color = "lightgrey", fill = "lightgrey") +
+  ggplot2::theme_void()
 
 soil_map <- base_map +
   geom_sf(
