@@ -47,7 +47,6 @@ germany_polygon <- st_read(
 )
 
 # filter simulated data based on polygon
-# Filter points inside Germany multipolygon
 filtered_data <- st_intersection(relative_yield, germany)
 
 # Plot filtered data

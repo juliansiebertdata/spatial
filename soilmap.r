@@ -120,11 +120,10 @@ st_write(
 
 # CREATE PLOT -----------------------------------------------------------------
 
-## get shape of germany map and hexagon map ---
+## get shape of germany polygon and germany hexagon map ----
 germany <- rnaturalearth::ne_countries(scale = "large", country = "germany", returnclass = "sf") %>%
   st_transform(4326) %>%
   select(name, geometry)
-
 
 st_write(
   germany,
@@ -134,36 +133,50 @@ st_write(
   )
 )
 
-
-# make basic germany map ---
-base_map <- ggplot2::ggplot(data = germany) +
-  ggplot2::geom_sf(color = "lightgrey", fill = "lightgrey") +
-  ggplot2::theme_void()
-
-soil_map <- base_map +
-  geom_sf(
-    data = soil_tbl,
-    shape = 21,
-    fill = "#FFA500",
-    color = "black",
-    size = 1,
-    alpha = 0.3
-  )
-
-soil_map
-
-# mapview(soil_tbl)
-
 ## get hexmap of soil data ----
 
 pacman::p_load(h3jsr)
 
-hex <- germany %>%
+# create hexagon grid based on germany polygon
+
+germany_polygon <- st_read(
+  here(
+    "data/country-shapes/germany",
+    "germany-polygon.gpkg"
+  )
+)
+
+hex_germany <- germany_polygon %>%
   polygon_to_cells(res = 6) %>%
-  cell_to_polygon(simple = FALSE)
+  cell_to_polygon(simple = FALSE) %>%
+  mutate(country = "germany")
+
+hex_germany_high_res <- germany_polygon %>%
+  polygon_to_cells(res = 8) %>%
+  cell_to_polygon(simple = FALSE) %>%
+  mutate(country = "germany")
+
+st_write(
+  hex_germany_high_res,
+  here::here(
+    "data/country-shapes/germany",
+    "germany-hexagon-res-high.gpkg"
+  )
+)
 
 hex_map <- base_map +
-  geom_sf(data = hex)
+  ggplot2::geom_sf(data = hex_germany)
+
+ggplot2::ggsave(
+  plot = hex_map,
+  here::here(
+    "data/country-shapes/germany",
+    "germany-hexagon-res-mid.png"
+  ),
+  width = 30,
+  height = 30,
+  units = "cm"
+)
 
 ## make fancy map ----
 
