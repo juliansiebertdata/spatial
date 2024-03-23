@@ -10,6 +10,7 @@ if (!"pacman" %in% installed.packages()) {
 pacman::p_load(dplyr, janitor, readxl, sf, rnaturalearth, here, ggtext, stringr)
 
 # load soil data ----- ----------------------------------------------------
+# -> SKIP if you can read tidy data at Plot section
 # data from https://www.openagrar.de/receive/openagrar_mods_00054877
 # erste bodenzustandserhebung landwirtschaft - kerndatensatz
 
