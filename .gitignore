@@ -2,8 +2,7 @@
 .Rhistory
 .RData
 .Ruserdata
-
+.vscode/
+/plots/
+/data/country-shapes/
 /.quarto/
-
-plots/
-data/country-shapes/
