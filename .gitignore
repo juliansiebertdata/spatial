@@ -4,3 +4,6 @@
 .Ruserdata
 
 /.quarto/
+
+plots/
+data/country-shapes/
