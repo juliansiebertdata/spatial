@@ -47,7 +47,12 @@ germany_polygon <- st_read(
 )
 
 # filter simulated data based on polygon
-filtered_data <- st_intersection(relative_yield, germany)
+filtered_data <- st_intersection(relative_yield, germany_polygon)
+
+# make basic germany map
+base_map <- ggplot2::ggplot(data = germany) +
+  ggplot2::geom_sf(color = "lightgrey", fill = "lightgrey") +
+  ggplot2::theme_void()
 
 # Plot filtered data
 filtered_map <- base_map +
