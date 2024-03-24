@@ -3,7 +3,6 @@
 .RData
 .Ruserdata
 .vscode/
-plots/
 data/country-shapes/
 sources/
 output/
