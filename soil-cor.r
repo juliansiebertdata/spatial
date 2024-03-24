@@ -5,11 +5,14 @@ if (!"pacman" %in% installed.packages()) {{ install.packages("pacman") }
 }
 
 ## load librarys ----
-pacman::p_load(tidyverse, here, sf, ggtext)
+pacman::p_load(here, sf)
+library(ggplot2)
+library(ggtext)
+library(tidyverse)
 
 ## load plot function ----
 ## make ggplot2 function ----
-germany_hex_map <- function(data, fill) {
+germany_hex_map_nolegend <- function(data, fill) {
   ggplot2::ggplot() +
     ggplot2::geom_sf(
       data = data,
@@ -19,11 +22,6 @@ germany_hex_map <- function(data, fill) {
     ggplot2::theme_void() +
     ggplot2::theme(
       plot.background = element_rect(fill = NA, color = NA),
-      legend.position = c(1.1, 0.5),
-      legend.title = element_text(face = "bold", size = 22, color = "grey30"),
-      legend.text = element_text(size = 12, face = "bold", color = "grey30"),
-      legend.justification = "left",
-      plot.margin = margin(l = 1, r = 1, t = 1, b = 1, "cm"),
       plot.title = element_markdown(
         hjust = 0.5,
         vjust = 0.5,
@@ -113,8 +111,12 @@ ggsave(
 # strong correlation between soil organic carbon and nitrogen
 # make bivariate hexplot
 bivariate_data <- soil_hex_tbl %>%
-  select(organiccarbon_g_per_kg, totalnitrogen_g_per_kg) %>%
-  drop_na()
+  select(organiccarbon_g_per_kg, totalnitrogen_g_per_kg, landuse_type) %>%
+  drop_na(organiccarbon_g_per_kg, totalnitrogen_g_per_kg) %>%
+  mutate(landuse_type_log = case_when(
+    landuse_type == "A" ~ 0,
+    landuse_type == "G" | landuse_type == "SO" ~ 1,
+  ))
 
 # calculate quantiles
 quantile(bivariate_data$organiccarbon_g_per_kg, probs = c(0.33, 0.66))
@@ -163,9 +165,9 @@ pal_bivar <- c(
 )
 
 # plot bivariate hexplot
-bivariate_map <- germany_hex_map(bivariate_data, cl) +
+bivariate_map <- germany_hex_map_nolegend(bivariate_data, cl) +
   scale_fill_manual(values = pal_bivar) +
-  guides(fill = "none")
+  theme(legend.position = "none")
 
 
 ggsave(
@@ -184,19 +186,36 @@ tib <- tibble(
   value = paste0(var_A, var_B)
 )
 
+t1 <- 14.86
+t2 <- 26.98
+t3 <- 1.39
+t4 <- 2.43
+
+
+
 leg_pts <- ggplot(data = tib, aes(x = var_A, y = var_B, fill = value)) +
-  geom_point(pch = 21, size = 25, color = "grey90") +
+  geom_point(pch = 21, size = 30, color = "grey90") +
   scale_fill_manual(values = pal) +
   guides(fill = "none") +
+  scale_x_discrete(
+    label = c("< 14.9 g/kg", "< 27 g/kg ", "=> 27 g/kg")
+  ) +
+  scale_y_discrete(
+    label = c("< 1.4 g/kg", "< 2.4 g/kg ", "=> 2.4 g/kg")
+  ) +
   coord_fixed(
     xlim = c(0.8, 3.6),
     ylim = c(0.8, 3.5),
     clip = "off"
   ) +
-  labs(x = "Organic Carbon [g/kg]", y = "Total Nitrogen [g/kg]") +
+  labs(x = "Organic Carbon [g/kg soil]", y = "Total Nitrogen [g/kg soil]") +
   theme_minimal() +
   theme(
-    axis.text = element_blank(),
+    axis.text = element_markdown(
+      size = 8,
+      face = "bold",
+      color = "grey30"
+    ),
     axis.title = element_markdown(
       size = 12,
       face = "bold",
@@ -219,7 +238,7 @@ leg_pts <- ggplot(data = tib, aes(x = var_A, y = var_B, fill = value)) +
         length = unit(0.3, "cm"),
       )
     ),
-    # plot.margin = unit(x = c(2, 8, 8, 2), units = "cm")
+    plot.background = element_rect(fill = NA, color = NA),
   ) +
   annotate(
     geom = "text",
@@ -260,33 +279,35 @@ ggsave(
 
 ## scatter plot ----
 
-scatter <- ggplot(
+
+scatter_plot <- ggplot(
   bivariate_data,
   aes(
     x = organiccarbon_g_per_kg,
     y = totalnitrogen_g_per_kg,
-    fill = cl,
-    color = cl
+    color = cl,
+    fill = cl
   )
 ) +
   geom_point(
     shape = 21,
     stroke = 1.2,
-    fill = NA
+    fill = NA,
+    alpha = 0.6
   ) +
-  scale_fill_manual(values = pal_bivar) +
-  scale_color_manual(values = pal_bivar) +
-  guides(fill = "none", colour = "none") +
+  scale_color_manual(
+    values = pal_bivar
+  ) +
+  guides(colour = "none", fill = "none") +
   theme_classic() +
-  xlim(0, 250) +
-  ylim(0, 20) +
-  geom_smooth(
-    inherit.aes = FALSE,
-    aes(x = organiccarbon_g_per_kg, y = totalnitrogen_g_per_kg),
-    method = "lm",
-    se = FALSE,
-    color = "grey30",
-    size = 1.2
+  coord_cartesian(xlim = c(0, 100), ylim = c(0, 10)) +
+  scale_x_continuous(
+    breaks = c(seq(0, 100, 20)),
+    labels = c(seq(0, 100, 20))
+  ) +
+  scale_y_continuous(
+    breaks = c(seq(0, 10, 2)),
+    labels = c(seq(0, 10, 2))
   ) +
   labs(x = "Organic Carbon [g/kg]", y = "Total Nitrogen [g/kg]") +
   ggplot2::theme(
@@ -295,6 +316,12 @@ scatter <- ggplot(
       face = "bold",
       color = "grey30"
     ),
+    axis.text = element_markdown(
+      size = 10,
+      face = "bold",
+      color = "grey30"
+    ),
+    axis.ticks = element_blank(),
     axis.line.x.bottom = element_line(
       color = "grey30",
       linewidth = 1.4,
@@ -328,7 +355,7 @@ scatter <- ggplot(
   )
 
 ggsave(
-  plot = scatter,
+  plot = scatter_plot,
   here("plots", "carbon-nitro-scatter.png"),
   width = 30,
   height = 30,
@@ -336,7 +363,8 @@ ggsave(
 )
 
 # combine plots ----
-pacman::p_load(patchwork)
+# detach("package:geomtextpath", unload = TRUE)
+library(patchwork)
 
 layout <- c(
   area(t = 8, l = 1, b = 10, r = 2),
@@ -353,3 +381,177 @@ ggsave(
   height = 40,
   units = "cm"
 )
+
+# all three combined
+# Define the layout
+layout <- c(
+  area(t = 1, l = 1, b = 6, r = 3), # Area for scatter_plot
+  area(t = 7, l = 2, b = 11, r = 3), # Area for legend
+  area(t = 1, l = 4, b = 11, r = 10) # Area for bivariate_map
+)
+
+# Create the patchwork object
+all_plots <- scatter_plot + leg_pts + bivariate_map + plot_layout(design = layout)
+
+
+ggsave(
+  plot = all_plots,
+  here("plots", "carbon-nitro-final.png"),
+  width = 55,
+  height = 38,
+  units = "cm"
+)
+
+# lm and quantile regression ----
+
+## lm ----
+
+lm_model <- lm(
+  totalnitrogen_g_per_kg ~ organiccarbon_g_per_kg,
+  data = bivariate_data
+)
+
+lm_model %>% broom::tidy()
+
+## median regression ----
+
+library(quantreg)
+
+quant_model <- rq(
+  totalnitrogen_g_per_kg ~ organiccarbon_g_per_kg,
+  data = bivariate_data,
+  tau = c(0.25, 0.5, 0.75)
+)
+
+quant_model %>% broom::tidy()
+
+scatter_plot_lm <- scatter_plot +
+  coord_cartesian() +
+  scale_x_continuous() +
+  scale_y_continuous() +
+  geom_smooth(
+    inherit.aes = FALSE,
+    aes(x = organiccarbon_g_per_kg, y = totalnitrogen_g_per_kg),
+    method = "lm",
+    formula = y ~ x,
+    color = "black",
+    linewidth = 1.2
+  ) +
+  geom_quantile(
+    inherit.aes = FALSE,
+    aes(x = organiccarbon_g_per_kg, y = totalnitrogen_g_per_kg),
+    stat = "quantile",
+    formula = y ~ x,
+    quantiles = c(0.05, 0.5, 0.95),
+    color = "darkred",
+    linewidth = 1.2,
+    linetype = "dashed"
+  )
+
+ggsave(
+  plot = scatter_plot_lm,
+  here("plots", "carbon-nitro-scatter-model.png"),
+  width = 30,
+  height = 30,
+  units = "cm"
+)
+
+# -> lm model underestimates the effect of organic carbon on total nitrogen
+remotes::install_version("ggplot2", version = "< 3.5.0")
+
+
+## facet by land use ----
+
+facet_land_use <- bivariate_data %>%
+  mutate(landuse_type_log = case_when(
+    landuse_type == "A" ~ "Agriculture",
+    landuse_type == "G" ~ "Grassland and Special Culture",
+    landuse_type == "SO" ~ "Grassland and Special Culture"
+  )) %>%
+  germany_hex_map_nolegend(data = ., cl) +
+  scale_fill_manual(values = pal_bivar) +
+  facet_wrap(~landuse_type_log) +
+  theme(
+    legend.position = "none",
+    strip.text = element_markdown(
+      size = 12,
+      face = "bold",
+      color = "grey30"
+    ),
+    strip.placement = "bottom"
+  )
+
+layout_landuse <- c(
+  area(t = 8, l = 1, b = 10, r = 2),
+  area(t = 1, l = 1, b = 10, r = 10)
+)
+
+landuse_facet <- leg_pts + facet_land_use +
+  plot_layout(design = layout_landuse) +
+  plot_annotation(
+    title = "Organic Carbon and Total Nitrogen by Land Use",
+    theme = theme(
+      plot.title = element_markdown(
+        hjust = 0.5,
+        vjust = 0.5,
+        size = 12,
+        face = "bold",
+        color = "grey30"
+      ),
+      plot.subtitle = element_markdown(
+        hjust = 0.5,
+        vjust = 0.5,
+        size = 8,
+        color = "grey30"
+      )
+    )
+  )
+
+
+ggsave(
+  plot = landuse_facet,
+  here("plots", "carbon-nitro-combo-patchwork.png"),
+  width = 65,
+  height = 30,
+  units = "cm"
+)
+
+ggsave(
+  plot = facet_land_use,
+  here("plots", "carbon-nitro-landuse.png"),
+  width = 40,
+  height = 20,
+  units = "cm"
+)
+
+## logistic regression ----
+
+boxplot <- ggplot(
+  bivariate_data,
+  aes(x = as.factor(landuse_type_log), y = totalnitrogen_g_per_kg)
+) +
+  geom_boxplot() +
+  geom_jitter(width = 0.2, height = 0, alpha = 0.5) +
+  theme_bw()
+
+scatter_plot_landuse <- scatter_plot +
+  coord_cartesian() +
+  scale_x_continuous() +
+  scale_y_continuous() +
+  facet_wrap(~ as.factor(landuse_type_log)) +
+  gghighlight::gghighlight()
+
+ggsave(
+  plot = boxplot,
+  here("plots", "carbon-nitro-boxplot.png"),
+  width = 15,
+  height = 15,
+  units = "cm"
+)
+
+glm(
+  formula = as.factor(landuse_type_log) ~ organiccarbon_g_per_kg + totalnitrogen_g_per_kg,
+  family = "binomial",
+  data = bivariate_data
+) %>%
+  gtsummary::tbl_regression(exponentiate = TRUE)
